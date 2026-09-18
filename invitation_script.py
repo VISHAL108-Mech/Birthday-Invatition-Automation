@@ -1,6 +1,10 @@
 """Script to automate the process of sending birthday invitations to a list of people."""
 
 sender_name = input("Enter Your Name: ")
+event_date = input("Event Date (in format xx-xx-xxxx): ")
+event_time = input("Event Time (in format xx:xx AM/PM): ")
+venue = input("Event Venue: ")
+rsvp_date = input("RSVP Date (in format xx-xx-xxxx): ")
 
 # Read the names of the invited people from a text file.
 with open("Location of invitation names file", "r") as f1:
@@ -15,10 +19,10 @@ for name in names:
     name = name.strip()
     invitation = content.replace("[Invited Person’s Name]", name)
     invitation = invitation.replace("[Sender’s Name]", sender_name)
-    invitation = invitation.replace("[Insert Date]", "xx-xx-xxxx")
-    invitation = invitation.replace("[Insert Location]", "xxxxx")
-    invitation = invitation.replace("[Insert Time]", "xx:xx AM/PM")
-    invitation = invitation.replace("[RSVP Date]", "xx-xx-xxxx")
+    invitation = invitation.replace("[Insert Date]", date)
+    invitation = invitation.replace("[Insert Location]", venue)
+    invitation = invitation.replace("[Insert Time]", time)
+    invitation = invitation.replace("[RSVP Date]", rsvp_date)
 
     # Write the personalized invitation to a new text file for each invited person.
     with open(
