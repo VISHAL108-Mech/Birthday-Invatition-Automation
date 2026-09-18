@@ -19,9 +19,9 @@ for name in names:
     name = name.strip()
     invitation = content.replace("[Invited Person’s Name]", name)
     invitation = invitation.replace("[Sender’s Name]", sender_name)
-    invitation = invitation.replace("[Insert Date]", date)
+    invitation = invitation.replace("[Insert Date]", event_date)
     invitation = invitation.replace("[Insert Location]", venue)
-    invitation = invitation.replace("[Insert Time]", time)
+    invitation = invitation.replace("[Insert Time]", event_time)
     invitation = invitation.replace("[RSVP Date]", rsvp_date)
 
     # Write the personalized invitation to a new text file for each invited person.
